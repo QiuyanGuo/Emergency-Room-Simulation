@@ -118,11 +118,11 @@ def simulation(nurse, doctor, patient, sample):
     average_doctor = round(np.mean(ave_doctor), 2)
     max_wait_doctor = round(np.mean(max_doctor), 2)
 
-    print('When there are {} nurses, {} doctors, and around {} patients per hour, after {} times of simulation:'.format(nurse, doctor, patient, sample), file=outfile)
+    print('\n\nAfter {} times of simulation:'.format(sample), file=outfile)
     print("\nThe utilization of nurse is {}%".format(utilization_nurse), file=outfile)
     print("The utilization of doctor is {}%".format(utilization_doctor), file=outfile)
     print('\nThe average and maximum waiting time for nurse are {} minutes and {} minutes'.format(average_nurse, max_wait_nurse), file=outfile)
-    print('The average and maximum waiting time for doctor are {} minutes and {} minutes\n\n'.format(average_doctor, max_wait_doctor), file=outfile)
+    print('The average and maximum waiting time for doctor are {} minutes and {} minutes'.format(average_doctor, max_wait_doctor), file=outfile)
 
     return None
 
@@ -131,7 +131,8 @@ def main():
 
     clock()
 
-    for i in [20, 200, 2000, 20000]:
+    print('\nWhen there are 8 nurses, 4 doctors, and around 20 patients per hour', file=outfile)
+    for i in [20, 200]:
         simulation(8, 4, 20, i)
 
     print('\nTotal running time is %-1.5ss' % clock())
