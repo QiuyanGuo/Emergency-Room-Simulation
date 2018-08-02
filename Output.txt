@@ -1,0 +1,36 @@
+When there are 8 nurses, 4 doctors, and around 25 patients per hour, after 20 times of simulation:
+
+The utilization of nurse is 140.77%
+The utilization of doctor is 225.0%
+
+The average and maximum waiting time for nurse are 3.93 minutes and 20.77 minutes
+The average and maximum waiting time for doctor are 5.08 minutes and 26.17 minutes
+
+
+When there are 8 nurses, 4 doctors, and around 16 patients per hour, after 200 times of simulation:
+
+The utilization of nurse is 99.95%
+The utilization of doctor is 162.42%
+
+The average and maximum waiting time for nurse are 0.09 minutes and 1.16 minutes
+The average and maximum waiting time for doctor are 0.25 minutes and 3.18 minutes
+
+
+When there are 8 nurses, 4 doctors, and around 23 patients per hour, after 2000 times of simulation:
+
+The utilization of nurse is 162.93%
+The utilization of doctor is 269.17%
+
+The average and maximum waiting time for nurse are 7.28 minutes and 24.36 minutes
+The average and maximum waiting time for doctor are 7.38 minutes and 34.08 minutes
+
+
+When there are 8 nurses, 4 doctors, and around 21 patients per hour, after 20000 times of simulation:
+
+The utilization of nurse is 113.75%
+The utilization of doctor is 184.17%
+
+The average and maximum waiting time for nurse are 0.61 minutes and 5.02 minutes
+The average and maximum waiting time for doctor are 1.87 minutes and 19.37 minutes
+
+
