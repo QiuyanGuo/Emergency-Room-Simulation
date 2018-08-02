@@ -41,8 +41,6 @@ random_arrival = [random.random() for i in range(patient)]
 sum_arrival = sum(random_arrival)
 arrival_time = [total_time * i / sum_arrival for i in random_arrival]
 
-# arrive_time = float(60/patient)
-
 df_patients = pd.DataFrame({'Arrival_point': 0, 'Nurse_only': False,
                             'Waiting_nurse': 0, 'Meet_nurse_point': 0,
                             'Seeing_nurse': 0, 'After_nurse_point': 0,
@@ -50,7 +48,7 @@ df_patients = pd.DataFrame({'Arrival_point': 0, 'Nurse_only': False,
                             'Seeing_doctor': 0, 'After_doctor_point': 0}, index=list_patient)
 
 for i in range(patient):
-    df_patients.loc[list_patient[i], 'Arrival_point'] += arrival_time[i]
+    df_patients.loc[list_patient[i], 'Arrival_point'] += sum(arrival_time[:i])
 
 list_nurseonly_number = random.sample(list(range(patient)), patient_nurse)
 for i in list_nurseonly_number:
