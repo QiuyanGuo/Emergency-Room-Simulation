@@ -52,8 +52,8 @@ def utilization(mean_t, sd, min_t, max_t, nurse: int, doctor: int, patient: int,
     :param patient_both: number of patients who see both a nurse and a doctor, less than total patients number
     :return: a tuple with the utilization values of nurses and doctors
     """
-    """calculate the total time (minutes) nurses and doctors need to work with patients in one hour"""
 
+    # calculate the total time (minutes) nurses and doctors need to work with patients in one hour
     total_nurse_time = TimeDistribution(mean_t, sd, min_t, max_t, patient).sum_truncnorm()
     total_doctor_time = TimeDistribution(mean_t, sd, min_t, max_t, patient_both).sum_truncnorm()
 
@@ -85,21 +85,30 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
     :return: a tuple with the average and max waiting time for nurses and doctors of patients
     """
 
-    """Create a list of patient as [patient_1, patient_2, ..., patient_totalnumberofpatients], in order"""
+
+    # Create a list of patient as [patient_1, patient_2, ..., patient_totalnumberofpatients], in order
+
     list_patient = []
     for i in range(patient):
         list_patient.append('patient_{}'.format(i+1))
 
-    """Create a dataframe with the list of patient as index, all initial time data as 0, and assume all patients to 
-    see both a nurse and a doctor"""
+
+    # Create a dataframe with the list of patient as index, all initial time data as 0, and assume all patients to
+    # see both a nurse and a doctor
+
     df_patients = pd.DataFrame({'Arrival_point': 0, 'Nurse_only': False,
                                 'Waiting_nurse': 0, 'Meet_nurse_point': 0,
                                 'Seeing_nurse': 0, 'After_nurse_point': 0,
                                 'Waiting_doctor': 0, 'Meet_doctor_point': 0,
                                 'Seeing_doctor': 0, 'After_doctor_point': 0}, index=list_patient)
 
-    """Create a list of random number that sum to 60, which is used to be the list of the gap of the arrival time 
-    between every two patients in one hour, and assigned to the 'Arrival_point' column of the dataframe"""
+
+    # Create a list of random number that sum to 60, which is used to be the list of the gap (minutes) of the arrival
+    # time between every two patients in one hour
+    # Assume the starting point as 0, then the arrival point of each patient is the accumulative value of numbers of gap
+    # time, such as the arrival point of the first patient is 0 plus the value of the first item in the list, and that
+    # of the second patient is the first arrival time plus the value of the second item
+
     total_time = 60
     random_arrival = [random.random() for i in range(patient)]
     sum_arrival = sum(random_arrival)
@@ -107,17 +116,34 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
     for i in range(patient):
         df_patients.loc[list_patient[i], 'Arrival_point'] += sum(arrival_time[:i])
 
-    """Randomly select certain number of patients from the ordered patient list with their ordinal numbers, as people 
-    only seeing a nurse, put them in a list, and based on this list, change the cells of 'Nurse_only' column of these
-    patients to True"""
+
+    # Randomly select certain number of patients from the ordered patient list with their ordinal numbers, as people
+    # only seeing a nurse, put them in a list, and based on this list, change the cells of 'Nurse_only' column of these
+    # patients to True
+
     list_patient_nurse = random.sample(list(range(patient)), patient_nurse)
     for i in list_patient_nurse:
         df_patients.loc['patient_{}'.format(i + 1), 'Nurse_only'] = True
 
+
+    # Create two arrays for nurses and doctors with same numbers of items as the numbers of nurses and doctors
+    # respectively, each item represents the available time point of a nurse or a doctor
+    # The initial values are all 0 (assuming the starting point is 0), every nurse and doctor is available, then each
+    # item's value will add the time a nurse or doctor spent with a patient, each time after the accumulation indicates
+    # the time point that each nurse and doctor is available again
+
     arr_nurse = np.zeros(nurse)
     arr_doctor = np.zeros(doctor)
 
+
+    # Get a list of patients numbers of random floats, as the different time spending with a nurse of each patient,
+    # following normal distribution
+    # Assign this list of time values to the 'Seeing_nurse' column of the dataframe
+
     df_patients['Seeing_nurse'] = TimeDistribution(mean_t, sd, min_t, max_t, patient).time_spend()
+
+
+    # Com
 
     for i in range(patient):
         if min(arr_nurse) <= df_patients.loc[list_patient[i], 'Arrival_point']:
