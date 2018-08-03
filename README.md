@@ -7,7 +7,6 @@
 - The approximate patient number per hour is assigned, the exact patient number will be within 5 people of the given number
 - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
 - Time spending with a nurse and a doctor both follow the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
-- When utilization results > 1, the possibility of patients waiting is quite large
 - All time-related values are in minute(s)
 
 ### Random variables:
