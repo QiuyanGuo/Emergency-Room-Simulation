@@ -11,6 +11,7 @@
   - All time-related values are in minute(s)
 
 ## Simulation's variables of uncertainty:
+- The main uncertainty is how patients with different purposes arrive randomly and spend uncertain time with nurses/doctors
   ### Random variables:
   - Exact patient numbers in an hour
   - The arrival time of each patient in the hour
@@ -19,6 +20,7 @@
 
 ## Hypothesis or hypotheses before running the simulation:
 - When utilization results > 1, patients must need to wait for nurse or doctor, vice versa
+- For a given number of patients in an hour, 1/2 number of nurses and 1/4 number of nurses should be reasonable 
 
 ## Analytical Summary of findings: 
 - We indeed needed to change the assumptions several times based on the simulation outcomes during the process
