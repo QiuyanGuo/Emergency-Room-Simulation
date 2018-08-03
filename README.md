@@ -24,9 +24,8 @@
 ### Findings:
 - We did need to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
-- After analyzing the output data, we found:
--- When utilization results > 1, it's highly possible that patients need to wait nurse and doctor, but not necessarily
--- The higher the utilization rates go, the longer patients tend to wait
+- When utilization results > 1, it's highly possible that patients need to wait nurse and doctor, but not necessarily
+- The higher the utilization rates go, the longer patients tend to wait
 
 ### Tasks:
 - Time distribution, Utilization calculation - Nanzhu Liu
