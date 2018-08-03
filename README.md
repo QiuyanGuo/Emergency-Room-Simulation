@@ -17,10 +17,10 @@
 - All time-related values are in minutes
 
 ### Random variables:
-- exact patient numbers per hour
-- the time point each patient arrives in the hour
-- either a patient comes to only see a nurse or both a nurse and a doctor
-- the time spending with a nurse and a doctor of a patient
+- Exact patient numbers in an hour
+- The arrival time point of each patient in the hour
+- Either a patient comes only to see a nurse or to see both a nurse and a doctor
+- The time spending with a nurse and a doctor of a patient
 
 ### Findings:
 - With each set of given nurse, doctor, approximate patient numbers, the results remain stable after 20000 times of simulations
