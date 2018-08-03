@@ -1,10 +1,10 @@
 # main.py
 
 """Random variables:
-    patient numbers per hour
-    the time point each patient arrives in one hour
-    either a patient comes to only see a nurse or both a nurse and a doctor
-    the time spending with a nurse and a doctor of a patient
+    Exact patient numbers in an hour
+    The arrival time of each patient in the hour
+    Either a patient comes only to see a nurse or to see both a nurse and a doctor
+    The time(minutes) a nurse / doctor spent with a patient
     """
 
 import random
@@ -118,15 +118,21 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
     random_arrival = [random.random() for i in range(patient)]
     sum_arrival = sum(random_arrival)
     arrival_time = [total_time * i / sum_arrival for i in random_arrival]
-    for i in range(patient):
-        df_patients.loc[list_patient[i], 'Arrival_point'] += sum(arrival_time[:i])
+    try:
+        for i in range(patient):
+            df_patients.loc[list_patient[i], 'Arrival_point'] += sum(arrival_time[:i])
+    except KeyError:
+        print('Something is wrong with the random selection of Arrival_point')
 
     # Randomly select certain number of patients from the ordered patient list by their ordinal numbers
     # Use these selected patients as people only come to see a nurse, put their ordinal numbers in a list
     # Change the cells of 'Nurse_only' column of certain patients based on the ordinal numbers selected to this list
     list_patient_nurse_num = random.sample(list(range(patient)), patient_nurse)
-    for i in list_patient_nurse_num:
-        df_patients.loc['patient_{}'.format(i + 1), 'Nurse_only'] = True
+    try:
+        for i in list_patient_nurse_num:
+            df_patients.loc['patient_{}'.format(i + 1), 'Nurse_only'] = True
+    except KeyError:
+        print('Something is wrong with the random nurse-only-patient selection')
 
     # Get a list of patients numbers of random floats, as the different time spending with a nurse of each patient,
     # following normal distribution
@@ -208,22 +214,18 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
 """Run the simulation"""
 
 
-def simulation(nurse, doctor, patient, sample):
+def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
     """
     Simulate the situation to get both utilization of nurses and nurses, and average and max waiting time values
     :param nurse: given number of nurses
     :param doctor: given number of doctors
-    :param patient: the approximate number of patients per hours
+    :param patient_per_hour: the approximate number of patients per hours
+    :param mean_time: the mean time a nurse/doctor spent with a patient
     :param sample: simulate times
     :return:
     """
-    # Get the random number of patients, assume 20% of them only to see the nurses
-    patient = random.randint(patient - 5, patient + 5)
-    patient_nurse = int(patient * 0.2)
-    patient_nurse_doctor = patient - patient_nurse
 
     # (mean, sd, min, max) variables indicating the time(minutes) a patient needs to spent with a nurse/doctor
-    mean_time = random.randint(25, 35)
     sd = 1
     min_time = mean_time - 10
     max_time = mean_time + 10
@@ -231,6 +233,12 @@ def simulation(nurse, doctor, patient, sample):
     # Run both utilization and waiting time multiple times, get lists of the results respectivelt
     ut_nurse, ut_doctor, ave_nurse, max_nurse, ave_doctor, max_doctor = [], [], [], [], [], []
     for i in range(sample):
+
+        # Get the random number of patients, within 2 people of the given number, assume 20% of them only to see the nurses
+        patient = random.randint(patient_per_hour - 2, patient_per_hour + 2)
+        patient_nurse = int(patient * 0.2)
+        patient_nurse_doctor = patient - patient_nurse
+
         ut_n, ut_d = utilization(mean_time, sd, min_time, max_time, nurse, doctor, patient, patient_nurse_doctor)
         ut_nurse.append(ut_n)
         ut_doctor.append(ut_d)
@@ -248,10 +256,17 @@ def simulation(nurse, doctor, patient, sample):
     average_doctor = round(float(np.mean(ave_doctor)), 2)
     max_wait_doctor = round(float(np.mean(max_doctor)), 2)
 
-    print('\n\n=== When there are {} nurses, {} doctors, and around {} patients/hour ==='.format(nurse, doctor, patient), file=outfile)
+    print('\n\n=== When there are {} nurses, {} doctors, around {} patients/hour, around {} minutes a nurse/doctor spent with a patient ==='
+          .format(nurse, doctor, patient_per_hour, mean_time))
+    print('\n\n=== When there are {} nurses, {} doctors, and around {} patients/hour ===, around {} minutes a nurse/doctor spent with a patient'
+          .format(nurse, doctor, patient_per_hour, mean_time), file=outfile)
+    print("\nThe utilization of nurses is {}.".format(utilization_nurse))
     print("\nThe utilization of nurses is {}.".format(utilization_nurse), file=outfile)
+    print("The utilization of doctors is {}.".format(utilization_doctor))
     print("The utilization of doctors is {}.".format(utilization_doctor), file=outfile)
+    print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse))
     print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse), file=outfile)
+    print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor))
     print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor), file=outfile)
 
     return None
@@ -261,14 +276,15 @@ def main():
 
     clock()
 
+    print('\nAfter 20000 times of simulation:')
     print('\nAfter 20000 times of simulation:', file=outfile)
 
-    simulation(8, 4, 20, 20000)
-    simulation(10, 6, 20, 20000)
-    simulation(12, 6, 20, 20000)
-    simulation(12, 8, 20, 20000)
-    simulation(12, 8, 25, 20000)
-    simulation(12, 8, 30, 20000)
+    simulation(8, 4, 20, 30, 20000)
+    simulation(10, 6, 20, 30, 20000)
+    simulation(12, 6, 20, 30, 20000)
+    simulation(12, 8, 20, 30, 20000)
+    simulation(12, 8, 25, 30, 20000)
+    simulation(12, 8, 30, 30, 20000)
 
     print('\nTotal running time is %-1.5ss' % clock())
 
