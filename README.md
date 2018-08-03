@@ -24,7 +24,8 @@
 ### Findings:
 - We did need to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
-- When utilization results > 1, the possibility of patients waiting is quite large
+- After analyzing the output data, we found:
+  - When utilization results > 1, the possibility of patients waiting tend to be- quite large
 
 ### Tasks:
 - Time distribution, Utilization calculation - Nanzhu Liu
