@@ -4,7 +4,7 @@
 - Nanzhu Liu & Qiuyan Guo
 
 ## Monte Carlo Simulation Scenario & Purpose:
-- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients, then find the nurse/doctor & patient combination benefiting both the patients and doctors
+- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients, then find the nurse/doctor & patient combination benefiting both the patients (short waiting time) and the hospital (no personnel wasted)
   #### Assumptions:
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
