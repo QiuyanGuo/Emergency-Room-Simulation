@@ -31,7 +31,7 @@
 - The higher the utilization rates go, the longer patients tend to wait
 
 ## Instructions on how to use the program:
-- Run the main.py file, which contains the complete program with utilization and waiting time calculations
+- Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
 - When calling the simulation function in the main function, the values of the parameters refering to numbers of nurses, doctors, patients, time a nurse/doctor spent with a patient, and running times, could be changed, to get results from different scenarios
 - Example_plots.ipynb contains same algorithm, only to show an example of the plots based on one set of people numbers
 - Output.txt contains printed results of the similuations of several sets of people numbers currently in the main.py file as examples
