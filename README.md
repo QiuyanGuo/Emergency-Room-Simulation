@@ -1,9 +1,11 @@
-## Title: Emergency Room Waiting Simulation
-### Team Member(s): Nanzhu Liu & Qiuyan Guo
+## Title: 
+- Emergency Room Waiting Simulation
+### Team Member(s): 
+- Nanzhu Liu & Qiuyan Guo
 
 ## Monte Carlo Simulation Scenario & Purpose:
 - This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients.
-  ### Assumptions:
+  #### Assumptions:
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
   - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
@@ -12,7 +14,7 @@
 
 ## Simulation's variables of uncertainty:
 - The main uncertainty is how patients with different purposes arrive randomly and spend uncertain time with nurses/doctors
-  ### Random variables:
+  #### Random variables:
   - Exact patient numbers in an hour
   - The arrival time of each patient in the hour
   - Either a patient comes only to see a nurse or to see both a nurse and a doctor
@@ -34,6 +36,6 @@
 - Example_plots.ipynb contains same algorithm, only to show an example of the plots based on one set of people numbers
 - Output.txt contains printed results of the similuations of several sets of people numbers currently in the main.py file as examples
 
-### Tasks:
+## Tasks:
 - Time distribution, Utilization calculation - Nanzhu Liu
 - Waiting time calculation - Qiuyan Guo
