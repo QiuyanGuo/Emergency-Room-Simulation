@@ -12,7 +12,7 @@
 
 ### Random variables:
 - Exact patient numbers in an hour
-- The arrival time point of each patient in the hour
+- The arrival time of each patient in the hour
 - Either a patient comes only to see a nurse or to see both a nurse and a doctor
 - The time spending with a nurse and a doctor of a patient
 
