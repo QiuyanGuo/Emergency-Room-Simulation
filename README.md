@@ -4,7 +4,7 @@
 
 ### Assumptions:
 - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
-- The approximate patient number per hour is assigned, the exact patient number will be within 5 people of the given number
+- The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
 - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
 - Time spending with a nurse and a doctor both follow the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
 - All time-related values are in minute(s)
