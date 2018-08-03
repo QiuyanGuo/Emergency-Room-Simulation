@@ -4,15 +4,14 @@
 - Nanzhu Liu & Qiuyan Guo
 
 ## Monte Carlo Simulation Scenario & Purpose:
-- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients.
+- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients, then find the nurse/doctor & patient combination benefiting both the patients and doctors
   #### Assumptions:
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
   - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
   - Time spending with a nurse and a doctor both follow the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
   - All time-related values are in minute(s)
-  
- - Try different sets of given numbers in the assumptions to see what combinations would benefit both the patients and the hostipal
+  - Try different sets of given numbers could be a way to find out what combinations would benefit both the patients and the hostipal
 
 ## Simulation's variables of uncertainty:
 - The main uncertainty is how patients with different purposes arrive randomly and spend uncertain time with nurses/doctors
