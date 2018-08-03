@@ -28,8 +28,8 @@
 ## Analytical Summary of findings: 
 - We indeed needed to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
-- When utilization results > 1, it's highly possible that patients need to wait nurse and doctor, but not necessarily
-- The higher the utilization rates go, the longer patients tend to wait
+- The higher the utilization rates of both nurses and doctors go, the longer patients tend to wait
+- When utilization results > 1, it's highly possible that patients need to wait nurse and doctor, but not necessarily; the first hypothesis goes well with nurse, not doctors
 
 ## Instructions on how to use the program:
 - Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
