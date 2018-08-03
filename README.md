@@ -8,13 +8,13 @@
 - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
 - Time spending with a nurse and a doctor both follow the same normal distribution
 - When utilization results > 1, the possibility of patients waiting is quite large
-- All time-related values are in minutes
+- All time-related values are in minute(s)
 
 ### Random variables:
 - Exact patient numbers in an hour
 - The arrival time of each patient in the hour
 - Either a patient comes only to see a nurse or to see both a nurse and a doctor
-- The time spending with a nurse and a doctor of a patient
+- The time(minutes) a nurse / doctor spent with a patient
 
 ### Files:
 - Main.py: Complete program with utilization and waiting time calculations
