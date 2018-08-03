@@ -4,8 +4,9 @@
 
 ### Files:
 - Main.py: complete program
+- Example_plots: same algorithm, only showing the plots based on one set of numbers of nurses, doctors, approximate patients
 - Output.txt: the output file with the printed results of the similuation of several sets of numbers of nurses, doctors, approximate patients
-- Example_plots: the plots and a dataframe based on one set of numbers of nurses, doctors, approximate patients
+
 
 ### Assumptions:
 - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
