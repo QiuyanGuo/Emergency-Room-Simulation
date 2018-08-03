@@ -258,10 +258,10 @@ def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
 
     print('\n\n=== When there are {} nurses, {} doctors, around {} patients/hour, around {} minutes a nurse/doctor spent with a patient ==='
           .format(nurse, doctor, patient_per_hour, mean_time))
-    print("\nThe utilization of nurses is {}.".format(utilization_nurse))
-    print("The utilization of doctors is {}.".format(utilization_doctor))
-    print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse))
-    print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor))
+    print("\nThe mean value of the utilization of nurses is {}.".format(utilization_nurse))
+    print("The mean value of the utilization of doctors is {}.".format(utilization_doctor))
+    print('\nThe mean values of the average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse))
+    print('The mean values of the average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor))
 
     return None
 
@@ -275,7 +275,7 @@ def main():
     # simulation(8, 4, 20, 30, 20000)
     # simulation(10, 6, 20, 30, 20000)
     simulation(12, 6, 25, 30, 20000)
-    simulation(12, 8, 30, 30, 20000)
+    # simulation(12, 8, 30, 30, 20000)
 
     print('\nTotal running time is %-1.5ss' % clock())
 
