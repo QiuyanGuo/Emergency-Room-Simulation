@@ -241,18 +241,18 @@ def simulation(nurse, doctor, patient, sample):
         max_doctor.append(max_d)
 
     # Get the mean values of these lists of results as final results to print
-    utilization_nurse = round(float(np.mean(ut_nurse)) * 100, 2)
-    utilization_doctor = round(float(np.mean(ut_doctor)) * 100, 2)
+    utilization_nurse = round(float(np.mean(ut_nurse)), 2)
+    utilization_doctor = round(float(np.mean(ut_doctor)), 2)
     average_nurse = round(float(np.mean(ave_nurse)), 2)
     max_wait_nurse = round(float(np.mean(max_nurse)), 2)
     average_doctor = round(float(np.mean(ave_doctor)), 2)
     max_wait_doctor = round(float(np.mean(max_doctor)), 2)
 
-    print('\n\nAfter {} times of simulation:'.format(sample))
-    print("\nThe utilization of nurse is {}%".format(utilization_nurse))
-    print("The utilization of doctor is {}%".format(utilization_doctor))
-    print('\nThe average and maximum waiting time for nurse are {} minutes and {} minutes'.format(average_nurse, max_wait_nurse))
-    print('The average and maximum waiting time for doctor are {} minutes and {} minutes'.format(average_doctor, max_wait_doctor))
+    print('\n\n=== When there are {} nurses, {} doctors, and around {} patients/hour ==='.format(nurse, doctor, patient), file=outfile)
+    print("\nThe utilization of nurses is {}.".format(utilization_nurse), file=outfile)
+    print("The utilization of doctors is {}.".format(utilization_doctor), file=outfile)
+    print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse), file=outfile)
+    print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor), file=outfile)
 
     return None
 
@@ -261,15 +261,20 @@ def main():
 
     clock()
 
-    print('\nWhen there are 8 nurses, 4 doctors, and around 20 patients per hour:')
-    for i in [20, 200, 2000, 20000]:  # Run the similuation for 20, 200, 2000, 20000 times
-        simulation(8, 4, 20, i)
+    print('\nAfter 20000 times of simulation:', file=outfile)
+
+    simulation(8, 4, 20, 20000)
+    simulation(10, 6, 20, 20000)
+    simulation(12, 6, 20, 20000)
+    simulation(12, 8, 20, 20000)
+    simulation(12, 8, 25, 20000)
+    simulation(12, 8, 30, 20000)
 
     print('\nTotal running time is %-1.5ss' % clock())
 
 
 if __name__ == '__main__':
 
-    # with open('Output.txt', 'w') as outfile:
-    main()
+    with open('Output.txt', 'w') as outfile:
+        main()
 
