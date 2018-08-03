@@ -35,7 +35,7 @@ class TimeDistribution:
         time = generator.rvs(self.num)
         return time
 
-    # Returns the sum of the list of time
+    # Return the sum of the list of time
     def sum_truncnorm(self) -> float:
         generator = truncnorm((self.min - self.mean) / self.sd, (self.max - self.mean) / self.sd, loc=self.mean, scale=self.sd)
         time = generator.rvs(self.num)
@@ -108,7 +108,7 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
                                 'Seeing_doctor': 0, 'After_doctor_point': 0}, index=list_patient)
 
 
-    """Deal with 'Arrival_point', 'Nurse_only', 'Seeing_nurse' columns, for all patients"""
+    """Deal with 'Arrival_point', 'Nurse_only', 'Seeing_nurse' columns"""
 
     # Create a list of random numbers that sum to 60
     # Use this list of numbers as the gap (minutes) of the arrival point between every two patients in one hour
@@ -135,7 +135,7 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
 
 
     """Create two nurse and doctor arrays, deal with 'Meet_nurse_point', 'Waiting_nurse', 'After_nurse_point' columns, 
-       for all patients, update nurse array"""
+       update nurse array"""
 
     # Create two arrays for nurses and doctors, item numbers equal to numbers of nurses and doctors respectively
     # Each item represents the available time point of a nurse or a doctor
@@ -164,8 +164,8 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
         arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'Seeing_nurse']
 
 
-    """Deal with 'Meet_doctor_point', 'Waiting_doctor', 'Seeing_doctor', 'After_nurse_point' columns, for all patiencts,
-       update doctor array during iterating, similar to nurse columns"""
+    """Deal with 'Meet_doctor_point', 'Waiting_doctor', 'Seeing_doctor', 'After_nurse_point' columns, update doctor 
+       array during iterating, similar to nurse columns"""
 
     # Select patients only to see a nurse, put None to their doctor-related cells
     list_patient_nurse = [p for p in df_patients[df_patients['Nurse_only'] == True].index]
@@ -241,12 +241,12 @@ def simulation(nurse, doctor, patient, sample):
         max_doctor.append(max_d)
 
     # Get the mean values of these lists of results as final results to print
-    utilization_nurse = round(np.mean(ut_nurse) * 100, 2)
-    utilization_doctor = round(np.mean(ut_doctor) * 100, 2)
-    average_nurse = round(np.mean(ave_nurse), 2)
-    max_wait_nurse = round(np.mean(max_nurse), 2)
-    average_doctor = round(np.mean(ave_doctor), 2)
-    max_wait_doctor = round(np.mean(max_doctor), 2)
+    utilization_nurse = round(float(np.mean(ut_nurse)) * 100, 2)
+    utilization_doctor = round(float(np.mean(ut_doctor)) * 100, 2)
+    average_nurse = round(float(np.mean(ave_nurse)), 2)
+    max_wait_nurse = round(float(np.mean(max_nurse)), 2)
+    average_doctor = round(float(np.mean(ave_doctor)), 2)
+    max_wait_doctor = round(float(np.mean(max_doctor)), 2)
 
     print('\n\nAfter {} times of simulation:'.format(sample))
     print("\nThe utilization of nurse is {}%".format(utilization_nurse))
