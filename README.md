@@ -26,5 +26,5 @@
 - When utilization results > 1, the possibility of patients waiting is quite large
 
 ### Tasks:
-- Utilization calculation - Nanzhu Liu
+- Time distribution, Utilization calculation - Nanzhu Liu
 - Waiting time calculation - Qiuyan Guo
