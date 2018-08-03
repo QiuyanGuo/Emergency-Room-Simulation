@@ -1,5 +1,4 @@
-## 590PR Final_Project
-### Nanzhu Liu & Qiuyan Guo
+### 590PR Final_Project (Nanzhu & Qiuyan)
 
 ### This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital. The goal is to see the utilization of nurses and doctors, and the waiting time of patients.
 
