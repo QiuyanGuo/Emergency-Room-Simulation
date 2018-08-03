@@ -11,6 +11,7 @@
   - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
   - Time spending with a nurse and a doctor both follow the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
   - All time-related values are in minute(s)
+  
  - Try different sets of given numbers in the assumptions to see what combinations would benefit both the patients and the hostipal
 
 ## Simulation's variables of uncertainty:
