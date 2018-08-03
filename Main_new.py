@@ -258,16 +258,10 @@ def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
 
     print('\n\n=== When there are {} nurses, {} doctors, around {} patients/hour, around {} minutes a nurse/doctor spent with a patient ==='
           .format(nurse, doctor, patient_per_hour, mean_time))
-    print('\n\n=== When there are {} nurses, {} doctors, and around {} patients/hour ===, around {} minutes a nurse/doctor spent with a patient'
-          .format(nurse, doctor, patient_per_hour, mean_time), file=outfile)
     print("\nThe utilization of nurses is {}.".format(utilization_nurse))
-    print("\nThe utilization of nurses is {}.".format(utilization_nurse), file=outfile)
     print("The utilization of doctors is {}.".format(utilization_doctor))
-    print("The utilization of doctors is {}.".format(utilization_doctor), file=outfile)
     print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse))
-    print('\nThe average and maximum waiting time for a nurse are {} minutes and {} minutes.'.format(average_nurse, max_wait_nurse), file=outfile)
     print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor))
-    print('The average and maximum waiting time for a doctor are {} minutes and {} minutes.\n'.format(average_doctor, max_wait_doctor), file=outfile)
 
     return None
 
@@ -277,13 +271,10 @@ def main():
     clock()
 
     print('\nAfter 20000 times of simulation:')
-    print('\nAfter 20000 times of simulation:', file=outfile)
 
-    simulation(8, 4, 20, 30, 20000)
-    simulation(10, 6, 20, 30, 20000)
-    simulation(12, 6, 20, 30, 20000)
-    simulation(12, 8, 20, 30, 20000)
-    simulation(12, 8, 25, 30, 20000)
+    # simulation(8, 4, 20, 30, 20000)
+    # simulation(10, 6, 20, 30, 20000)
+    simulation(12, 6, 25, 30, 20000)
     simulation(12, 8, 30, 30, 20000)
 
     print('\nTotal running time is %-1.5ss' % clock())
@@ -291,6 +282,6 @@ def main():
 
 if __name__ == '__main__':
 
-    with open('Output.txt', 'w') as outfile:
-        main()
+    # with open('Output.txt', 'w') as outfile:
+    main()
 
