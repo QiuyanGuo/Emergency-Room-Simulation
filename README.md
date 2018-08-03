@@ -1,7 +1,8 @@
 # 590PR Final_Project
-Fork from here to create your final project repository.
+Our project is to make a simulation for emergency room.
+Our goal is to see the utilization of doctors and nurses. When utilization is greater than 1, it means the all doctors
+and nurse are busy and coming patients have to wait. So if utilization is greater than 1, we calculate the waiting time.
 
-Two things are very different than all the previous assignments in 590PR regarding the permissions settings:
+Utilization calculation - Nanzhu Liu
+Waiting time calculation - Qiuyan Guo
 
-1. Please KEEP the "All_Students" team to have Read access.  
-2. Whenever you choose to, you are welcome to change your Final Project repository to public.  This will enable you to list it in your resume, website, or other portfolio.
