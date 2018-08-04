@@ -32,8 +32,7 @@
 - First hypothesis correct
 - Second hypothesis goes well with nurses, when the nurse utilization > 1, people need to wait for a nurse, but not necessarily the same with doctors -- waiting doctor time could be minimal even when doctor utilization > 1
 - Third hypothesis situation tend to follow a pattern: 
-    - if r = (time_spent_with_a_patient) / 60,
-    - (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization close to 1 and patients waiting for nurse time close to 0,
+    - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization close to 1 and patients waiting for nurse time close to 0,
 
 ## Instructions on how to use the program:
 - Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
