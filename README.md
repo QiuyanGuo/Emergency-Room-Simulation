@@ -1,6 +1,6 @@
 ## Title: 
 - Emergency Room Waiting Simulation
-### Team Member(s): 
+## Team Member(s): 
 - Nanzhu Liu & Qiuyan Guo
 
 ## Monte Carlo Simulation Scenario & Purpose:
