@@ -35,7 +35,7 @@
     - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) number of nurses would be the best choice, which ensures nurse utilization rate close to 1 and patients waiting for nurse time close to 0, and around (patient_number * r * 0.53) number of doctors would be the best choice, which ensures doctor utilization rate close to 1.5 and patients waiting for doctor time close to 0
 
 ## Instructions on how to use the program:
-- Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
+- Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously (over 30 min for one simulation)
 - When calling the simulation function in the main function, the values of the parameters refering to numbers of nurses, doctors, patients, time a nurse/doctor spent with a patient, and running times, could be changed, to get results from different scenarios
 - Example_plots.ipynb contains same algorithm, only to show an example of the plots based on one set of people numbers
 - Output.txt contains printed results of the similuations of several sets of people numbers currently in the main.py file as examples
