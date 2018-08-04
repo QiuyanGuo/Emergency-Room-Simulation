@@ -4,7 +4,7 @@
 - Nanzhu Liu & Qiuyan Guo
 
 ## Monte Carlo Simulation Scenario & Purpose:
-- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization of nurses and doctors, and the waiting time of patients, then find the nurse/doctor & patient combination benefiting both the patients (short waiting time) and the hospital (no personnel wasted)
+- This project is to make simulations for the nurse & doctor v.s. patients situation in an emergency room of a hospital, to see the utilization rates of nurses and doctors, and the waiting time of patients, then find the nurse/doctor & patient combination benefiting both the patients (short waiting time) and the hospital (no personnel wasted)
   #### Assumptions:
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
@@ -30,9 +30,9 @@
 - We indeed needed to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
 - First hypothesis correct
-- Second hypothesis goes well with nurses, when the nurse utilization > 1, people need to wait for a nurse, but not necessarily the same with doctors -- waiting doctor time could be minimal even when doctor utilization > 1
+- Second hypothesis goes well with nurses, not doctors; patients' waiting nurse time is minimal when nurse utilization rate close to 1, then increase along with the rate; while for doctor utilization rating, the start waiting point is 1.5
 - Third hypothesis situation tend to follow a pattern: 
-    - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization close to 1 and patients waiting for nurse time close to 0,
+    - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization rate close to 1 and patients waiting for nurse time close to 0, and around (patient_number * r * 0.53) numbers of doctors would be the best choice, which ensures doctor utilization rate close to 1.5 and patients waiting for doctor time close to 0
 
 ## Instructions on how to use the program:
 - Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
