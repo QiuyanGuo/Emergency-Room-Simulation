@@ -32,7 +32,7 @@
 - First hypothesis correct
 - Second hypothesis goes well with nurses, not doctors; patients' waiting nurse time is minimal when nurse utilization rate close to 1, then increase along with the rate; while for doctors the start waiting point is over 1 (around 1.3 - 1.5), mostly related to the time spent with a patient
 - Third hypothesis situation tend to follow a pattern: 
-    - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) number of nurses would be the best choice, which ensures nurse utilization rate close to 1, patients' average waiting time close to 0, and max waiting time around 2 min; and around (patient_number * r * 0.55) number of doctors would be the best choice, which ensures patients waiting for doctor time close to 0, and max waiting time less than 6 min
+    - If r = (time_spent_with_a_patient) / 60, then (patient_number * r) number of nurses would be the best choice, which ensures nurse utilization rate close to 1, patients' average waiting time close to 0, and max waiting time around 2 min; and around (patient_number * r * （0.5 to 0.6）) number of doctors would be the best choice, which ensures patients waiting for doctor time close to 0, and max waiting time less than 6 min
 - Max waiting time results of the simulations are less concentrated comparing to average waiting time results
 
 ## Instructions on how to use the program:
