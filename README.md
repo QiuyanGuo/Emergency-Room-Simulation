@@ -9,7 +9,7 @@
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
   - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
-  - Time a nurse and a doctor spending with a patient both follows the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
+  - Time a nurse / doctor spending with a patient follows the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
   - All time-related values are in minute(s)
   - Try different sets of given numbers to simulate the situations could be a way to find out what combinations would benefit both the patients and the hostipal
 
