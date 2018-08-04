@@ -9,7 +9,7 @@
   - The numbers of nurses and doctors are assigned at any given time, no breaks or shift time waste for these nurses and doctors
   - The approximate patient number per hour is assigned, the exact patient number will be within 2 people of the given number
   - All of the patients will see a nurse first, 20% of them will leave after seeing the nurse, the rest of them will also see a doctor after the nurse
-  - Time spending with a nurse and a doctor both follow the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
+  - Time a nurse and a doctor spending with a patient both follows the same normal distribution, with the assigned mean time value, sd = 1, min/max = mean -/+ 10
   - All time-related values are in minute(s)
   - Try different sets of given numbers to simulate the situations could be a way to find out what combinations would benefit both the patients and the hostipal
 
@@ -22,15 +22,17 @@
   - The time(minutes) a nurse / doctor spent with a patient
 
 ## Hypothesis or hypotheses before running the simulation:
+- The higher the utilization rates of both nurses and doctors go, the longer patients tend to wait 
 - When utilization results > 1, patients must need to wait for nurse or doctor, vice versa
-- When mean time spent is 30 minutes, for a given number of patients in an hour, 1/2 number of nurses and 1/4 number of nurses are needed
+- When mean time spent with a patient is 30 minutes, for a given number of patients in an hour, 1/2 number of nurses and 1/4 number of nurses are needed
 
 ## Analytical Summary of findings: 
 - We indeed needed to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
-- The higher the utilization rates of both nurses and doctors go, the longer patients tend to wait
-- When utilization results > 1, it's highly possible that patients need to wait nurse and doctor, but not necessarily; the first hypothesis goes well with nurses, not doctors
-- If r = time_spent / 60, then (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization close to 1 and patients waiting for nurse time close to 0
+- First hypothesis correct
+- Second hypothesis goes well with nurses, when the nurse utilization > 1, people need to wait for a nurse, but not necessarily the same with doctors -- waiting doctor time could be minimal even when doctor utilization > 1
+- Third hypothesis situation tend to follow a pattern: 
+    If r = (time_spent_with_a_patient) / 60, then (patient_number * r) numbers of nurses would be the best choice, which ensures nurse utilization close to 1 and patients waiting for nurse time close to 0
 
 ## Instructions on how to use the program:
 - Run the main.py file, which contains the complete program to print both utilization and waiting time calculation results simultaneously
