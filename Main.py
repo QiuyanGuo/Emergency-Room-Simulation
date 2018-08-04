@@ -256,7 +256,7 @@ def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
     average_doctor = round(float(np.mean(ave_doctor)), 2)
     max_wait_doctor = round(float(np.mean(max_doctor)), 2)
 
-    print('\n\n=== When there are {} nurses, {} doctors, around {} patients/hour, around {} minutes a nurse/doctor spent with a patient ==='
+    print('\n\n=== {} nurses, {} doctors, around {} patients/hour, around {} minutes spent with a patient ==='
           .format(nurse, doctor, patient_per_hour, mean_time))
     print("\nThe mean value of the utilization of nurses is {}.".format(utilization_nurse))
     print("The mean value of the utilization of doctors is {}.".format(utilization_doctor))
@@ -275,15 +275,18 @@ def main():
     # simulation(8, 4, 20, 30, 20000)
     # simulation(10, 6, 20, 30, 20000)
     # simulation(12, 6, 25, 30, 20000)
-    simulation(12, 8, 25, 30, 20000)
-    simulation(12, 8, 30, 30, 20000)
-    simulation(15, 8, 30, 30, 20000)
+    # simulation(12, 8, 25, 30, 20000)
+    # simulation(12, 8, 30, 30, 20000)
+    # simulation(15, 8, 30, 30, 20000)
+    # simulation(8, 4, 24, 20, 20000)
+    # simulation(8, 6, 24, 20, 20000)
+    # simulation(8, 5, 24, 20, 20000)
+    # simulation(10, 5, 30, 20, 20000)
+    simulation(10, 6, 30, 20, 20000)
 
     print('\nTotal running time is %-1.5ss' % clock())
 
 
 if __name__ == '__main__':
-
-    # with open('Output.txt', 'w') as outfile:
     main()
 
