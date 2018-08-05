@@ -24,7 +24,7 @@
 ## Hypothesis or hypotheses before running the simulation:
 - First, when utilization < 1, patients do not have to wait.
 - Second, when utilization > 1, patients must need to wait for nurses or doctors, the higher the utilization rates of both nurses and doctors are, the longer patients tend to wait
-- ?? Third, when the mean time spent with a patient is 30 minutes, for a given range of patients in an hour, 1/2 number of nurses and 1/4 number of doctors are needed
+- Third, when the mean time spent with a patient is 30 minutes, to achieve the best nurse/doctor combination, the number of nurses has to be 50% of the number of patients, and the number of doctors has to be the 25% of the number of patients
 
 ## Analytical Summary of findings: 
 - We have to change the assumptions several times based on the simulation outcomes during the process
