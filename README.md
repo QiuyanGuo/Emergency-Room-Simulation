@@ -24,17 +24,17 @@
 ## Hypothesis or hypotheses before running the simulation:
 - First, when utilization < 1, patients do not have to wait.
 - Second, when utilization > 1, patients must need to wait for nurses or doctors, the higher the utilization rates of both nurses and doctors are, the longer patients tend to wait
-- Third, when the mean time a doctor spent with a patient is 30 minutes, to achieve the best nurse/doctor combination, the number of nurses has to be 50% of the number of patients, and the number of doctors has to be the 25% of the number of patients
+- Third, when the mean time a doctor spent with a patient is 30 minutes, to achieve the best nurse/doctor/patient combination, the number of nurses has to be 50% of the number of patients, and the number of doctors has to be the 25% of the number of patients
 
 ## Analytical Summary of findings: 
 - We have to change the assumptions several times based on the simulation outcomes during the process
 - With each set of numbers, the results remain stable after 20000 times of simulations
 - First hypothesis is correct
-- Second hypothesis goes well with nurses, not doctors; the time that patients wait for nurses is minimal when nurse utilization rate close to 1, then increase along with the rate; while for doctors, when the start waiting point is over 1 (around 1.3 - 1.5), the time that patients wait for doctors mostly depends on the time a doctor spends with a patient
+- Second hypothesis goes well with nurses, not doctors; the time that patients wait for nurses is minimal when nurse utilization rate close to 1, then increase along with the rate; while for doctors, the start waiting point is over 1 (around 1.3 - 1.5), the time that patients wait for doctors mostly depends on the time a doctor spends with a patient
 - Third hypothesis situation tend to follow a pattern:
     - If rate = (time_spent_with_a_patient) / 60:
     - Nurse_number = (patient_number * rate), which ensures nurse utilization rate close to 1, patients' average waiting time close to 0, and max waiting time around 2 min; and 
-    - Doctor_number = (patient_number * rate *（range 0.5 to 0.6)), which ensures patients waiting for doctor time close to 0, and max waiting time less than 6 min
+    - Doctor_number = (patient_number * rate *（range 0.5 to 0.6)), which ensures minimal doctor personnel waste, patients waiting for doctor time close to 0, and max waiting time less than 6 min
 - The results of max waiting time are less concentrated comparing to average waiting time results along with the simulation time
 
 
