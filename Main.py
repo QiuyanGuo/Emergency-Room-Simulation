@@ -58,6 +58,10 @@ def utilization(mean_t, sd, min_t, max_t, nurse: int, doctor: int, patient: int,
     :param patient: given number of all of the patients
     :param patient_both: number of patients who see both a nurse and a doctor, less than total patients number
     :return: a tuple with the utilization values of nurses and doctors
+
+    >>> utilization(30,1,20,40,12,10,20,10)
+    0.84 0.49
+
     """
 
     # Calculate the total time (minutes) nurses and doctors need to work with patients in one hour
@@ -65,8 +69,8 @@ def utilization(mean_t, sd, min_t, max_t, nurse: int, doctor: int, patient: int,
     total_doctor_time = TimeDistribution(mean_t, sd, min_t, max_t, patient_both).sum_truncnorm()
 
     # Calculate the utilization values to return
-    utilization_nurse = total_nurse_time / (nurse * 60)
-    utilization_doctor = total_doctor_time / (doctor * 60)
+    utilization_nurse = round(total_nurse_time / (nurse * 60),2)
+    utilization_doctor = round(total_doctor_time / (doctor * 60),2)
 
     return utilization_nurse, utilization_doctor
 
@@ -235,6 +239,8 @@ def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
     for i in range(sample):
 
         # Get the random number of patients, within 2 people of the given number, assume 20% of them only to see the nurses
+        if i % 10 == 0:
+            print('\rCompleted simulations: ', 10+i, end='', flush=True)
         patient = random.randint(patient_per_hour - 2, patient_per_hour + 2)
         patient_nurse = int(patient * 0.2)
         patient_nurse_doctor = patient - patient_nurse
@@ -289,7 +295,7 @@ def main():
     # simulation(21, 13, 28, 45, 20000)
     # simulation(7, 3, 28, 15, 20000)
     # simulation(7, 4, 28, 15, 20000)
-    simulation(7, 5, 28, 15, 20000)
+    simulation(7, 5, 28, 15, 20)
 
     print('\nTotal running time is %-1.5ss' % clock())
 
