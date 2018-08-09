@@ -167,7 +167,7 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
         df_patients.loc[list_patient[i], 'After_nurse_point'] = df_patients.loc[list_patient[i], 'Meet_nurse_point'] + df_patients.loc[list_patient[i], 'Seeing_nurse']
 
         # Update the value of the nurse in the array, store his/her next available point in the array
-        arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'Seeing_nurse']
+        arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'After_nurse_point']
 
 
     """Deal with 'Meet_doctor_point', 'Waiting_doctor', 'Seeing_doctor', 'After_nurse_point' columns, update doctor 
@@ -198,7 +198,7 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
         df_patients.loc[list_patient_both[i], 'After_doctor_point'] = df_patients.loc[list_patient_both[i], 'Meet_doctor_point'] + df_patients.loc[list_patient_both[i], 'Seeing_doctor']
 
         # Update the value of the doctor in the array, store his/her next available point in the array
-        arr_doctor[np.argmin(arr_doctor)] += df_patients.loc[list_patient_both[i], 'Seeing_doctor']
+        arr_doctor[np.argmin(arr_doctor)] += df_patients.loc[list_patient_both[i], 'After_doctor_point']
 
 
     """After building the dataframs, get the average and max values of Waiting_nurse and Wating_doctor columns to return"""
