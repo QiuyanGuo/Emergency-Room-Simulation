@@ -171,8 +171,10 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
         df_patients.loc[list_patient[i], 'After_nurse_point'] = df_patients.loc[list_patient[i], 'Meet_nurse_point'] + df_patients.loc[list_patient[i], 'Seeing_nurse']
 
         # Update the value of the nurse in the array, store his/her next available point in the array
-        arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'After_nurse_point']
-
+        if arr_nurse[np.argmin(arr_nurse)] == 0:
+            arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'After_nurse_point']
+        else:
+            arr_nurse[np.argmin(arr_nurse)] += df_patients.loc[list_patient[i], 'Seeing_nurse']
 
     """Deal with 'Meet_doctor_point', 'Waiting_doctor', 'Seeing_doctor', 'After_nurse_point' columns, update doctor 
        array during iterating, similar to nurse columns"""
@@ -202,8 +204,10 @@ def wait_time(mean_t, sd, min_t, max_t, nurse, doctor, patient, patient_nurse, p
         df_patients.loc[list_patient_both[i], 'After_doctor_point'] = df_patients.loc[list_patient_both[i], 'Meet_doctor_point'] + df_patients.loc[list_patient_both[i], 'Seeing_doctor']
 
         # Update the value of the doctor in the array, store his/her next available point in the array
-        arr_doctor[np.argmin(arr_doctor)] += df_patients.loc[list_patient_both[i], 'After_doctor_point']
-
+        if arr_doctor[np.argmin(arr_doctor)] == 0:
+            arr_doctor[np.argmin(arr_doctor)] += df_patients.loc[list_patient_both[i], 'After_doctor_point']
+        else:
+            arr_doctor[np.argmin(arr_doctor)] += df_patients.loc[list_patient_both[i], 'Seeing_doctor']
 
     """After building the dataframs, get the average and max values of Waiting_nurse and Wating_doctor columns to return"""
 
@@ -240,7 +244,7 @@ def simulation(nurse, doctor, patient_per_hour, mean_time, sample):
 
         # Get the random number of patients, within 2 people of the given number, assume 20% of them only to see the nurses
         if i % 10 == 0:
-            print('\rCompleted simulations: ', 10+i, end='', flush=True)
+            print('\rCompleted simulations: ', 10 + i, end='', flush=True)
         patient = random.randint(patient_per_hour - 2, patient_per_hour + 2)
         patient_nurse = int(patient * 0.2)
         patient_nurse_doctor = patient - patient_nurse
