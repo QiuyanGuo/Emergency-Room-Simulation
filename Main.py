@@ -280,26 +280,15 @@ def main():
 
     clock()
 
-    print('\nAfter 20000 times of simulation:')
+    print('\nAfter 10000 times of simulation:')
 
-    # simulation(8, 4, 20, 30, 20000)
-    # simulation(10, 6, 20, 30, 20000)
-    # simulation(12, 6, 25, 30, 20000)
-    # simulation(12, 8, 25, 30, 20000)
-    # simulation(12, 8, 30, 30, 20000)
-    # simulation(15, 8, 30, 30, 20000)
-    # simulation(8, 4, 24, 20, 20000)
-    # simulation(8, 5, 24, 20, 20000)
-    # simulation(8, 6, 24, 20, 20000)
-    # simulation(10, 5, 30, 20, 20000)
-    # simulation(10, 6, 30, 20, 20000)
-    # simulation(20, 10, 30, 40, 20000)
-    # simulation(20, 11, 30, 40, 20000)
-    # simulation(20, 12, 30, 40, 20000)
-    # simulation(21, 13, 28, 45, 20000)
-    # simulation(7, 3, 28, 15, 20000)
-    # simulation(7, 4, 28, 15, 20000)
-    simulation(7, 5, 28, 15, 20)
+    # simulation(8, 4, 20, 30, 10000)
+    # simulation(10, 6, 20, 30, 10000)
+    # simulation(12, 6, 25, 30, 10000)
+    # simulation(21, 13, 28, 45, 10000)
+    # simulation(20, 12, 30, 40, 10000)
+    simulation(10, 6, 30, 20, 10000)
+
 
     print('\nTotal running time is %-1.5ss' % clock())
 
