@@ -287,7 +287,10 @@ def main():
     # simulation(12, 6, 25, 30, 10000)
     # simulation(21, 13, 28, 45, 10000)
     # simulation(20, 12, 30, 40, 10000)
-    simulation(10, 6, 30, 20, 10000)
+    # simulation(10, 6, 30, 20, 10000)
+    # simulation(7, 5, 28, 15, 10000)
+    # simulation(10, 8, 20, 30, 10000)
+    simulation(20, 16, 30, 40, 10000)
 
 
     print('\nTotal running time is %-1.5ss' % clock())
