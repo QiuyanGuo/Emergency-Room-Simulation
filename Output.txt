@@ -10,6 +10,15 @@ The mean values of the average and maximum waiting time for a nurse are 4.89 min
 The mean values of the average and maximum waiting time for a doctor are 19.43 minutes and 44.85 minutes.
 
 
+=== 12 nurses, 6 doctors, around 25 patients/hour, around 30 minutes spent with a patient ===
+
+The mean value of the utilization of nurses is 1.04.
+The mean value of the utilization of doctors is 1.7.
+
+The mean values of the average and maximum waiting time for a nurse are 1.23 minutes and 5.73 minutes.
+The mean values of the average and maximum waiting time for a doctor are 14.13 minutes and 36.28 minutes.
+
+
 
 === 10 nurses, 6 doctors, around 20 patients/hour, around 30 minutes spent with a patient ===
 
@@ -21,14 +30,6 @@ The mean values of the average and maximum waiting time for a doctor are 6.58 mi
 
 
 
-=== 12 nurses, 6 doctors, around 25 patients/hour, around 30 minutes spent with a patient ===
-
-The mean value of the utilization of nurses is 1.04.
-The mean value of the utilization of doctors is 1.7.
-
-The mean values of the average and maximum waiting time for a nurse are 1.23 minutes and 5.73 minutes.
-The mean values of the average and maximum waiting time for a doctor are 14.13 minutes and 36.28 minutes.
-
 === 21 nurses, 13 doctors, around 28 patients/hour, around 45 minutes spent with a patient ===
 
 The mean value of the utilization of nurses is 1.0.
@@ -36,6 +37,8 @@ The mean value of the utilization of doctors is 1.32.
 
 The mean values of the average and maximum waiting time for a nurse are 0.4 minutes and 3.05 minutes.
 The mean values of the average and maximum waiting time for a doctor are 4.35 minutes and 15.28 minutes.
+
+
 
 === 20 nurses, 12 doctors, around 30 patients/hour, around 40 minutes spent with a patient ===
 
@@ -45,6 +48,8 @@ The mean value of the utilization of doctors is 1.35.
 The mean values of the average and maximum waiting time for a nurse are 0.49 minutes and 3.42 minutes.
 The mean values of the average and maximum waiting time for a doctor are 5.21 minutes and 17.64 minutes.
 
+
+
 === 10 nurses, 6 doctors, around 30 patients/hour, around 20 minutes spent with a patient ===
 
 The mean value of the utilization of nurses is 1.0.
@@ -52,3 +57,33 @@ The mean value of the utilization of doctors is 1.35.
 
 The mean values of the average and maximum waiting time for a nurse are 0.9 minutes and 4.25 minutes.
 The mean values of the average and maximum waiting time for a doctor are 7.41 minutes and 19.05 minutes.
+
+
+
+=== 7 nurses, 5 doctors, around 28 patients/hour, around 15 minutes spent with a patient ===
+
+The mean value of the utilization of nurses is 1.0.
+The mean value of the utilization of doctors is 1.14.
+
+The mean values of the average and maximum waiting time for a nurse are 1.06 minutes and 4.41 minutes.
+The mean values of the average and maximum waiting time for a doctor are 2.89 minutes and 9.35 minutes.
+
+
+
+=== 10 nurses, 8 doctors, around 20 patients/hour, around 30 minutes spent with a patient ===
+
+The mean value of the utilization of nurses is 1.0.
+The mean value of the utilization of doctors is 1.02.
+
+The mean values of the average and maximum waiting time for a nurse are 0.93 minutes and 4.72 minutes.
+The mean values of the average and maximum waiting time for a doctor are 0.74 minutes and 4.87 minutes.
+
+
+
+=== 20 nurses, 16 doctors, around 30 patients/hour, around 40 minutes spent with a patient ===
+
+The mean value of the utilization of nurses is 1.0.
+The mean value of the utilization of doctors is 1.02.
+
+The mean values of the average and maximum waiting time for a nurse are 0.5 minutes and 3.46 minutes.
+The mean values of the average and maximum waiting time for a doctor are 0.42 minutes and 3.79 minutes.
