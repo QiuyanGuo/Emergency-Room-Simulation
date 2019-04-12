@@ -1,7 +1,7 @@
 ## Title: 
 - Emergency Room Waiting Simulation
 ## Team Member(s): 
-- Nanzhu Liu & Qiuyan Guo
+- Qiuyan Guo & Nanzhu Liu
 
 ## Monte Carlo Simulation Scenario & Purpose:
 - This project is to make simulations for the nurses & doctors v.s. patients situation in an emergency room of a hospital, to see the utilization rates of nurses and doctors, and the waiting time of patients, then find the nurses/doctors & patients combination benefiting both the patients (short waiting time) and the hospital (no personnel wasted)
